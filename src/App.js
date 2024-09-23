@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MainPage from './components/MainPage';
+import MirroredNavbar from './components/Navbar';
+import ProgressWithInput from './components/Progress';
+import InputVerification from './components/InputVerification';
+import PasswordGenerator from './components/PasswordGenerator';
+import Timer from './components/Timer';
+import RickAndMortyQueries from './components/RickAndMortyQueries';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Main Page Route */}
+        <Route path="/" element={<MainPage />} />
+
+        {/* Routes for Each Component */}
+        <Route path="/navbar" element={<MirroredNavbar />} />
+        <Route path="/progress" element={<ProgressWithInput />} />
+        <Route path="/verification" element={<InputVerification />} />
+        <Route path="/password-generator" element={<PasswordGenerator />} />
+        <Route path="/timer" element={<Timer />} />
+        <Route path="/rick-and-morty" element={<RickAndMortyQueries />} />
+      </Routes>
+    </Router>
   );
 }
 

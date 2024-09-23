@@ -1,0 +1,12 @@
+.mirrored-navbar {
+    transform: scaleY(-1); /* Flip the entire navbar vertically */
+    direction: rtl;        /* Reverse the text direction */
+  }
+  
+  .mirrored-navbar .nav-link,
+  .mirrored-navbar .navbar-brand {
+    transform: scaleY(-1); /* Flip the text back to normal */
+    direction: ltr;        /* Set the text direction back to left-to-right */
+  }
+  
+  
